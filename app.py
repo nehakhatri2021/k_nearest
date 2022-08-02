@@ -11,7 +11,7 @@ model=pickle.load(pickle_in)
 dataset= pd.read_csv('Social_Network_Ads.csv')
 X = dataset.iloc[:, 2:4].values
 def predict_note_authentication(UserID, Gender,Age,EstimatedSalary):
-  output= model.predict(sc.transform([[Age,EstimatedSalary]]))
+  output= model.predict([[Age,EstimatedSalary]])
   print("Purchased", output)
   if output==[1]:
     prediction="Item will be purchased"
