@@ -9,7 +9,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 pickle_in = open("/content/drive/My Drive/knn_model.pkl","rb")
 model=pickle.load(pickle_in)
 dataset= pd.read_csv('/content/drive/My Drive/Social_Network_Ads.csv')
-X = dataset.iloc[:, [2:3]].values
+X = dataset.iloc[:, [2,3]].values
 def predict_note_authentication(UserID, Gender,Age,EstimatedSalary):
   output= model.predict(sc.transform([[Age,EstimatedSalary]]))
   print("Purchased", output)
